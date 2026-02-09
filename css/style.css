@@ -1,0 +1,240 @@
+body {
+    margin: 0;
+    font-family: Georgia, serif;
+    background-color: #FAF7F1;
+    color: #3A2F25;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px 0;
+    background-color: #FAF7F1;
+}
+.logo {
+    width: 64px !important;
+    height: auto !important;
+    display: block;
+}
+.nav {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 15px 0;
+    background-color: transparent; 
+}
+.nav a {
+    text-decoration: none;
+    color: #4A3B2A;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+.nav a:hover {
+    color: #6C8E55;
+}
+.logo {
+    height: 50px;
+}
+
+/* HERO */
+.hero {
+    width: 100%;
+    min-height: 70vh;          
+    background-image: url("../images/centralais\ atteels.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+}
+.hero-content {
+    text-align: center;
+    background-color: #F2E9D8;
+    max-width: 420px;
+    padding: 40px;
+}
+.hero h1 {
+    font-size: 42px;
+    letter-spacing: 4px;
+    margin: 0 0 20px 0;
+}    
+.hero-cta {
+  margin-top: 40px;
+}
+
+.intro-text p {
+  opacity: 0;
+  transform: translateY(14px);
+  filter: blur(6px);
+
+  animation: teaFadeIn 1.8s ease forwards;
+  animation-delay: var(--delay, 0s);
+
+  font-family: var(--font-primary);
+  color: #3A2F25;
+  margin: 0 0 0.4em 0;
+  letter-spacing: 0.3px;
+  line-height: 1.6;
+}
+
+@keyframes teaFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.btn-primary {
+    background-color: #6C8E55;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    cursor: pointer;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+.content {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #6C8E55;
+    color: #FAF7F1;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 13px;
+  letter-spacing: 1.2px;
+}
+
+.btn:hover {
+  background-color: #4A3B2A;
+  transform: translateY(-1px);
+  transition: all 0.3s ease;
+}
+.about {
+  padding: 5rem 1.5rem;
+  background-color: #f6f7f3;
+}
+.about-box {
+  background-color: #C7D8B7;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3.5rem 3rem;
+  text-align: center;
+  border-radius: 6px;
+box-shadow: 0 0 0 rgba(0,0,0,0);
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 1.8s ease,
+    transform 1.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Kad aktivizējas */
+.about-box.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-box {
+  background-color: #C7D8B7;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 3.5rem 3rem;
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+}
+.about-lead {
+   font-weight: 500;
+}
+.about-emphasis {
+   opacity: 0;
+  transform: translateY(10px);
+  animation: paragraphFade 2.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: calc(0.6s + (var(--i) * 1.7s) + 0.4s);
+  font-style: italic;
+}
+.about-inner p {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: paragraphFade 2.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: calc(0.6s + (var(--i) * 1.7s));
+}
+
+@keyframes paragraphFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ritualFade {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes ritualShadow {
+  to {
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  }
+}
+.contact {
+  padding: 5rem 1.5rem;
+  background-color: #f6f7f3;
+}
+
+.contact-box {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+  background: #fff; /* ja vēlies atsevišķu laukumu, bet vari arī izņemt */
+ max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+
+  opacity: 0;
+  transform: translateY(12px);
+  animation: contactFade 2.4s ease forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes contactFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.contact-intro {
+  margin: 2rem 0;
+  line-height: 1.7;
+  font-size: 1.05rem;
+  color: #2f3a2d;
+}
+
+.contact-email a {
+  font-size: 1.1rem;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+  padding-bottom: 2px;
+  color: #2f3a2d;
+}
+
+.contact-email a:hover {
+  border-bottom-color: rgba(0,0,0,0.6);
+}

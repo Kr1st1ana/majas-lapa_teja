@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <title>Par mums | Laiks tējai</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+    <img src="images/kruzite_logo.jpg" class="logo" alt="Laiks tējai">
+</header>
+
+<nav class="nav">
+    <a href="index.html">Sākums</a>
+    <a href="par-mums.html">Par mums</a>
+    <a href="padomi.html">Padomi</a>
+    <a href="kontakti.html">Kontakti</a>
+ 
+</nav>
+<section class="about">
+  <div class="about-box">
+    <div class="about-inner">
+       <p class="about-lead" style="--i:0"> 
+           Laiks Tējai radās no vēlmes apstāties.
+     </p>
+
+     <p style="--i:1">
+      No mirkļiem, kuros tēja kļūst par vairāk nekā dzērienu — par rituālu, sarunu un klātbūtni.
+     </p>
+
+     <p style="--i:2">
+      Mēs ticam, ka labai tējai vajag laiku: lai atvērtos garša, lai norimtu domas, lai būtu vieta sev.
+     </p>
+
+    <p style="--i:3">
+      Šeit dalāmies pieredzē, vienkāršos padomos un iedvesmā ikvienam, kurš vēlas ieviest savā ikdienā mazliet vairāk miera.
+     </p>
+
+    <p style="--i:4" class="about-emphasis">
+      Laiks Tējai nav par steigu.<br>
+      Tas ir par klusumu, sajūtu un apzinātu mirkli.
+    </p>
+    </div>
+  </div>
+</section>
+<script>
+  const aboutBox = document.querySelector('.about-box');
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.3
+    }
+  );
+
+  observer.observe(aboutBox);
+</script> 
+
+</body>
+</html>
