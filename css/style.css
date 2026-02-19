@@ -268,10 +268,11 @@ box-shadow: 0 0 0 rgba(0,0,0,0);
   font-size: 18px;
   font-weight: 500;
 
-  text-decoration: none;  /* noņem underline saitēm */
-  border: none;           /* ja bija border */
+  text-decoration: none !important;  /* NOŅEM underline */
+  border: none;
   transition: all 0.3s ease;
 }
+
 
 
 .tea-card:hover {
