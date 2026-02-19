@@ -1,8 +1,9 @@
 body {
-    margin: 0;
-    font-family: Georgia, serif;
-    background-color: #FAF7F1;
-    color: #3A2F25;
+ min-height: 100vh;
+  background-color: #FAF7F1;
+  margin: 0;
+  font-family: Georgia, serif; 
+  color: #3A2F25;
 }
 
 .header {
@@ -246,24 +247,100 @@ box-shadow: 0 0 0 rgba(0,0,0,0);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
-  margin-top: 20px;
+  max-width: 700px;
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px 0;
 }
+
 
 .tea-card {
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: 150px;
-  background: #f7f3ea;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  text-decoration: none;
-  color: #333;
-  font-weight: 600;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  align-items: center;
+  text-align: center;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  max-height: 200px;
+  background-color: #C7D8B7;
+  color: #3A2F25;
+  border-radius: 20px;
+  font-size: 18px;
+  font-weight: 500;
+
+  text-decoration: none;  /* noņem underline saitēm */
+  border: none;           /* ja bija border */
+  transition: all 0.3s ease;
 }
 
+
 .tea-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  background-color: #6C8E55; /* Tējasmirtes zaļā */
+  color: #FAF7F1;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
 }
+
+/* Mobilais skats */
+@media (max-width: 600px) {
+  .tea-grid {
+    grid-template-columns: 1fr; /* viens zem otra */
+  }
+  .tea-card {
+    max-height: 180px; /* mazāki kvadrāti telefonā */
+  }
+}
+
+.back-button {
+ align-self: flex-start; 
+  display: inline-block;
+  margin: 20px 0 10px 20px;
+  padding: 10px 18px;
+  background-color: #6C8E55; /* Tējasmirtes zaļā */
+  color: #FAF7F1; /* Gaišā krēmkrāsa */
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 500;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #5A7746; /* nedaudz tumšāks tonis */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+.page-title {
+  text-align: center;       /* Centrs horizontāli */
+  font-family: Georgia, serif; /* Serif fonts */
+  font-size: 34px;           /* Lielums virsrakstam */
+  font-weight: 600;          /* Nedaudz treknāks, elegants */
+  letter-spacing: 0.5px;     /* Gaisīgāks teksts */
+   margin: 20px 0 40px 0;
+  margin-bottom: 40px;
+  color: #3A2F25;            /* Tumšā kakao brūnā */
+  line-height: 1.3;          /* Lai teksts būtu viegli lasāms */
+}
+.title-underline {
+  width: 260px;            /* piemērots SVG platums */
+  margin: 10px auto 40px auto;
+  display: flex;
+  justify-content: center;
+}
+
+.leaf {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;                /* lapiņas izmērs */
+}
+
+.leaf.left {
+  left: -20px;                     /* pozicionē kreisajā galā */
+}
+
+.leaf.right {
+  right: -20px;                    /* pozicionē labajā galā */
+}
+
+
