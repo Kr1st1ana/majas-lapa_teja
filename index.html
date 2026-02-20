@@ -5,7 +5,7 @@
     <title>Laiks tējai</title>
   <link rel="stylesheet" href="css/style.css">
    </head>
-<body>
+<body class="preload">
 
 <header class="header">
     <img src="images/kruzite_logo.jpg" class="logo" alt="Laiks tējai">
@@ -27,11 +27,20 @@
   </div>
 
  <div class="hero-cta">
-  <a href="mirkli-ar-teju.html" class="btn">Atklāj tējas stāstu</a>
+  <a href="mirklis-ar-teju.html" class="btn">Atklāj tējas stāstu</a>
 </div>
 
 
 </section>
-
+<script>
+  window.addEventListener("load", function() {
+    document.body.classList.add("fade-in");
+  });
+</script>
+<script>
+window.addEventListener("load", function() {
+  document.body.classList.remove("preload");
+});
+</script>
 </body>
 </html>
