@@ -3,9 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <title>Tējas rituāli</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <h1>Tējas rituāli</h1>
-  <p>Šeit būs stāsts par tējas rituāliem...</p>
+
+<body class="tejas-rituali-page">
+
+  <a href="mirklis-ar-teju.html" class="menu-toggle" id="backButton">
+    <span></span>
+    <span></span>
+    <span></span>
+  </a>
+
+<script>
+const backButton = document.getElementById("backButton");
+
+backButton.addEventListener("click", function(event) {
+  event.preventDefault();
+
+  document.body.classList.add("fade-out");
+
+  setTimeout(() => {
+    window.location.href = this.href;
+  }, 1200); // tieši tāds pats kā CSS transition
+});
+</script>
+
+  <h2 class="page-title">Tējas rituāli</h2>
+  <div class="soft-line"></div>
+
+  <section class="tejas-rituali-container">
+  <div class="rituali-row">
+    <img src="images/teja1.webp" alt="Zaļā tēja">
+    <div class="rituali-text">
+      <h3>Tēja sākas klusumā</h3>
+      <p>Ar ūdeni, kas uzsilst.<br>
+      Ar brīdi, ko izvēlies veltīt sev.<br>
+      Ar smalkajām pagatavošanas niansēm, kas no vienkāršas tasītes rada īpašu mirkli.
+      </p>
+    </div>
+  </div>
+
+  <div class="rituali-row">
+    <img src="images/teja2.avif" alt="Kūmelīšu tēja">
+    <div class="rituali-text">
+      <strong>Kumelīšu tēja</strong>
+      <p>Ieliec kumelīšu ziedus karstā ūdenī. Ļauj ievilkties 5-7 minūtes.</p>
+    </div>
+  </div>
+
+  <div class="rituali-row">
+  <img src="images/teja4.webp" alt="Melnā tēja">
+    <div class="rituali-text">
+      <strong>Melnā tēja</strong>
+      <p>Šķipsniņai melnās tējas uzlej karstu ūdeni. Pēc 3-5 minūtēm tēja gatava.</p>
+    </div>
+  </div>
+</section>
+
 </body>
 </html>
