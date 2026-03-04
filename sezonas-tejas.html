@@ -2,10 +2,89 @@
 <html lang="lv">
 <head>
   <meta charset="UTF-8">
-  <title>Tējas rituāli</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Veselībai</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <h1>Tējas rituāli</h1>
-  <p>Šeit būs stāsts par sezonas tējām...</p>
+<body class="preload">
+
+  <!-- Atpakaļ uz iepriekšējo lapu -->
+  <a href="mirklis-ar-teju.html" class="menu-toggle" id="backButton">
+    <span></span>
+    <span></span>
+    <span></span>
+  </a>
+
+  <h2 class="page-title">Sezonas tējas</h2>
+<div class="soft-line"></div>
+
+<section class="veselibai-container">
+  <div class="kreisais-bloks">
+  <div class="augu-attels">
+    <img src="images/sezona1.webp" alt="Sezonas tējas">
+  </div>
+
+  <p class="attela-teksts">Ar dabas ritmu.<br>
+      Ar gadalaiku elpu.<br>
+      Ar garšu, kas mainās līdz ar laiku.<br>
+      Sezonas tēja ir aicinājums dzīvot līdzi laikam.<br>
+      Izgaršot mirkli tieši tādu, kāds tas ir.
+    </p>
+</div>
+
+  <div class="augu-saraksts">
+    <a href="#" data-modal="pavasaris">pavasaris</a>
+    <a href="#" data-modal="vasara">vasara</a>
+    <a href="#" data-modal="rudens">rudens</a>
+    <a href="#" data-modal="ziema">ziema</a>
+  </div>
+  </section>
+
+<div id="pavasaris" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Pavasaris</h3>
+    <p>Vieglas, attīrošas tējas ar nātrēm, bērzu lapām un piparmētru.</p>
+  </div>
+  </div>
+
+  <div id="vasara" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Vasara</h3>
+    <p>
+      Vasarā piemērotas vieglas, atsvaidzinošas tējas – piparmētra,
+      citronmelisa, liepziedi un ogu maisījumi. Tās veldzē,
+      nomierina un harmonizē ķermeni siltajā laikā.
+    </p>
+  </div>
+  </div>
+
+  <div id="rudens" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Rudens</h3>
+    <p>
+      Rudenī izvēlas sildošas un imunitāti stiprinošas tējas –
+      mežrozītes, ingvers, kanēlis, melnā tēja ar garšvielām.
+      Tās palīdz saglabāt līdzsvaru un spēku vēsajos vakaros.
+    </p>
+  </div>
+  </div>
+
+  <div id="ziema" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Ziema</h3>
+    <p>
+      Ziemā īpaši piemērotas bagātīgas, sildošas tējas –
+      salvija, timiāns, upeņu lapas un garšvielu maisījumi.
+      Tās sasilda ķermeni un rada mierpilnu noskaņu tumšajos mēnešos.
+    </p>
+  </div>
+</div>
+  
+   <script src="js/main.js"></script>
+  
 </body>
 </html>

@@ -13,31 +13,17 @@
   <span></span>
 </a>
 
-<script>
-const backButton = document.getElementById("backButton");
-
-backButton.addEventListener("click", function(event) {
-  event.preventDefault();
-
-  document.body.classList.add("fade-out");
-
-  setTimeout(() => {
-    window.location.href = this.href;
-  }, 1200); // tieši tāds pats kā CSS transition
-});
-</script>
-
-
-
 <h2 class="page-title">Mirklis ar tēju</h2>
 <div class="soft-line"></div>
 
 <div class="tea-grid">
     <a href="tejas-rituali.html" class="tea-card">Tējas rituāli</a>
-    <a href="veseliba.html" class="tea-card">Veselība</a>
+    <a href="veselibai.html" class="tea-card">Veselībai</a>
     <a href="sezonas-tejas.html" class="tea-card">Sezonas tējas</a>
     <a href="teju-daudzveidiba.html" class="tea-card">Tēju daudzveidība</a>
   </div>
+
+<script src="js/main.js"></script>
 
 </body>
 </html>

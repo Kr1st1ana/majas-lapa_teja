@@ -1,78 +1,153 @@
+
 body {
- min-height: 100vh;
-  background-color: #FAF7F1;
   margin: 0;
-
-  font-family: Georgia, serif; 
+  font-family: 'Georgia', serif;
+  background-color: #FAF7F1;
   color: #3A2F25;
-  transition: opacity 1.2s cubic-bezier(0.4, 0.0, 0.2, 1);
 
-  }
-body.preload {
   opacity: 0;
+  transform: scale(1.02) translateY(20px);
+  transition: 
+    opacity 1.2s cubic-bezier(0.65, 0.0, 0.35, 1),
+    transform 1.2s cubic-bezier(0.65, 0.0, 0.35, 1);
+}
+
+body.fade-in {
+  opacity: 1;
+  transform: scale(1) translateY(0);
 }
 body.fade-out {
   opacity: 0;
+  transform: scale(0.98) translateY(-20px);
+}
+/* Header un logo */
+.header {
+  text-align: center;   /* centrē logo */
+  padding: 20px 0;
+  position: relative;
+  z-index: 5;           /* lai ir virs hero fona */
 }
 
-.header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 24px 0;
-    background-color: #FAF7F1;
-}
 .logo {
-    width: 64px !important;
-    height: auto !important;
-    display: block;
+  width: 80px;
 }
+
+/* Hero sekcija */
+/* Hero sadaļa ar fona attēlu */
+.hero {
+  position: relative;
+  min-height: 80vh;
+  background: url('../images/centralais atteels.jpg') center/cover no-repeat;
+  padding: 40px 10%;
+
+  display: flex;
+  flex-direction: column;   /* ļoti svarīgi */
+  align-items: center;      /* centrē horizontāli */
+}
+
+/* Logo centrēts augšā */
+.hero .logo {
+  display: block;
+  width: 120px;
+  margin: 0 auto
+}
+
+/* Saturu novieto zem logo, pa kreisi */
+.hero-content {
+  max-width: 400px;
+  align-self: flex-start;  /* teksts pa kreisi */
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+/* Maigs krēma pārklājums, lai teksts izceltos */
+.hero::before {
+  content: "";
+  position: absolute;
+  top:0; left:0;
+  width:100%; height:100%;
+  background: rgba(250, 247, 241, 0.4);
+  z-index: 1;
+}
+
 .nav {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    padding: 15px 0;
-    background-color: transparent; 
+  position: relative;
+  z-index: 2;   /* lai būtu virs pārklājuma */
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 60px;
 }
+
 .nav a {
-    text-decoration: none;
-    color: #4A3B2A;
-    font-weight: 600;
-    letter-spacing: 1px;
-    font-size: 14px;
+  text-decoration: none;
+  color: #3A2F25;
+  font-size: 18px;
+  font-weight: 500;
+  transition: 0.3s ease;
 }
 
 .nav a:hover {
-    color: #6C8E55;
+  color: #6C8E55;
 }
-.logo {
-    height: 50px;
+/* Aktīvs stāvoklis fade-in efektam */
+body.fade-in .hero-content {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* HERO */
-.hero {
-    width: 100%;
-    min-height: 70vh;          
-    background-image: url("../images/centralais\ atteels.jpg");
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    padding: 0 40px;
+/* Animētais intro teksts */
+.intro-text p {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: slideIn 1s forwards;
+  animation-delay: var(--delay);
+  font-size:20px;
+  font-weight: 300;
+  letter-spacing: 1px;
 }
-.hero-content {
-    text-align: center;
-    background-color: #F2E9D8;
-    max-width: 420px;
-    padding: 40px;
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-.hero h1 {
-    font-size: 42px;
-    letter-spacing: 4px;
-    margin: 0 0 20px 0;
-}    
-.hero-cta {
-  margin-top: 40px;
+
+/* CTA poga */
+.hero-cta .btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 10px 24px;
+  background-color: #6C8E55; /* galvenā tējas zaļā */
+  color: #FAF7F1;
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.hero-cta .btn:hover {
+  background-color: #4A3B2A; /* akcenta brūnā */
+  transform: translateY(-3px);
+}
+
+/* Intro teksts ar delay (CSS animācija) */
+.intro-text p {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s forwards;
+}
+.intro-text .intro-1 { animation-delay: 0s; }
+.intro-text .intro-2 { animation-delay: 1.8s; }
+.intro-text .intro-3 { animation-delay: 3.6s; }
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .intro-text p {
@@ -121,7 +196,7 @@ body.fade-out {
     border-radius: 30px;
     font-weight: 500;
     font-size: 13px;
-  letter-spacing: 1.2px;
+    letter-spacing: 1.2px;
 }
 
 .btn:hover {
@@ -140,7 +215,7 @@ body.fade-out {
   padding: 3.5rem 3rem;
   text-align: center;
   border-radius: 6px;
-box-shadow: 0 0 0 rgba(0,0,0,0);
+  box-shadow: 0 0 0 rgba(0,0,0,0);
   opacity: 0;
   transform: translateY(24px);
   transition:
@@ -167,7 +242,7 @@ box-shadow: 0 0 0 rgba(0,0,0,0);
    font-weight: 500;
 }
 .about-emphasis {
-   opacity: 0;
+  opacity: 0;
   transform: translateY(10px);
   animation: paragraphFade 2.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   animation-delay: calc(0.6s + (var(--i) * 1.7s) + 0.4s);
@@ -211,12 +286,12 @@ box-shadow: 0 0 0 rgba(0,0,0,0);
   max-width: 640px;
   margin: 0 auto;
   text-align: center;
-  background: #C7D8B7; /* ja vēlies atsevišķu laukumu, bet vari arī izņemt */
- max-width: 640px;
+  background: #C7D8B7; 
+  max-width: 640px;
   margin: 0 auto;
   text-align: center;
-
   opacity: 0;
+ 
   transform: translateY(12px);
   animation: contactFade 2.4s ease forwards;
   animation-delay: 0.5s;
@@ -228,7 +303,6 @@ box-shadow: 0 0 0 rgba(0,0,0,0);
     transform: translateY(0);
   }
 }
-
 
 .contact-intro {
   margin: 2rem 0;
@@ -254,12 +328,12 @@ box-shadow: 0 0 0 rgba(0,0,0,0);
 
 .tea-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
   max-width: 700px;
-  width: 90%;
+  width: min(1100px,90%);
   margin: 0 auto;
-  padding: 20px 0;
+  padding: 40px 0;
 }
 
 .tea-card {
@@ -281,7 +355,6 @@ box-shadow: 0 0 0 rgba(0,0,0,0);
   transition: all 0.3s ease;
 }
 
-
 .tea-card:hover {
   background-color: #C7D8B7;
   color: #FAF7F1;
@@ -300,7 +373,7 @@ box-shadow: 0 0 0 rgba(0,0,0,0);
 }
 
 .back-button {
- align-self: flex-start; 
+  align-self: flex-start; 
   display: inline-block;
   margin: 20px 0 10px 20px;
   padding: 10px 18px;
@@ -324,7 +397,7 @@ box-shadow: 0 0 0 rgba(0,0,0,0);
   font-size: 32px;           /* Lielums virsrakstam */
   font-weight: 400;          /* Nedaudz treknāks, elegants */
   letter-spacing: 1.2px;     /* Gaisīgāks teksts */
-   margin: 20px 0 40px 0;
+  margin: 20px 0 40px 0;
   margin-bottom: 12px;
   color: #3A2F25;            /* Tumšā kakao brūnā */
   line-height: 1.3;          /* Lai teksts būtu viegli lasāms */
@@ -339,21 +412,6 @@ box-shadow: 0 0 0 rgba(0,0,0,0);
     rgba(108, 142, 85, 0.6),
     transparent
   );
-}
-
-.leaf {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 18px;                /* lapiņas izmērs */
-}
-
-.leaf.left {
-  left: -20px;                     /* pozicionē kreisajā galā */
-}
-
-.leaf.right {
-  right: -20px;                    /* pozicionē labajā galā */
 }
 
 .menu-toggle {
@@ -377,6 +435,7 @@ box-shadow: 0 0 0 rgba(0,0,0,0);
   border-radius: 2px;
   transition: all 0.4s ease;
 }
+
 .menu-toggle:hover span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
   background-color: #3A2F25; /* Tumšā kakao */
@@ -391,26 +450,14 @@ box-shadow: 0 0 0 rgba(0,0,0,0);
   background-color: #3A2F25;
 }
 
-.tejas-rituali-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #FAF7F1;
-  transition: all 0.6s ease;
- }
-
-.rituali-row {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 30px;
-  background-color: #C7D8B7;
-  padding: 15px;
-  border-radius: 10px;
-  opacity: 0;
-  transform: translateY(12px);
-  animation: rowFade 2.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+.attela-teksts {
+  margin-top: 12px;
+  text-align: center;
+  color: #3A2F25;
+  font-size: 0.95rem;
+  line-height: 1.4;
 }
+
 .rituali-row:nth-child(1) {
   animation-delay: 0.6s;
 }
@@ -438,20 +485,311 @@ box-shadow: 0 0 0 rgba(0,0,0,0);
   filter: brightness(1.05);
 }
 
-.rituali-text h3 {
-  margin: 0 0 8px 0;
-  color: #4A3B2A;
-}
-
-.rituali-text p {
-  margin: 0;
-  color: #3A2F25;
-  font-size: 0.95rem;
-  line-height: 1.4;
-}
 @keyframes rowFade {
   to {
     opacity: 1;
     transform: translateY(0);
   }
+}
+ /* Fade-in efekts */
+body.veselibai-page {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1.2s cubic-bezier(0.4,0,0.2,1),
+              transform 1.2s cubic-bezier(0.4,0,0.2,1);
+}
+
+body.veselibai-page.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Vispārējais stils */
+body {
+  margin:0;
+  font-family: 'Georgia', serif;
+  background-color:#FAF7F1;
+  color:#3A2F25;
+}
+
+h2.page-title {
+  text-align:center;
+  margin-top:50px;
+  font-size:32px;
+}
+
+/* Augu sadaļa */
+.veselibai-container {
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  gap:80px;
+  padding:0 10%;
+  flex-wrap:wrap;
+}
+.kreisais-bloks {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* vai flex-start, ja gribi pa kreisi */
+  max-width: 400px;
+}
+
+.augu-attels {
+  width: 100%;
+  max-width: 400px;     /* vari mainīt, ja gribi lielākas */
+  aspect-ratio: 1 / 1;  /* skaista, dabīga proporcija */
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.augu-attels img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.attela-teksts {
+  margin-top: 14px;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: center;
+  color: #6C8E55;
+  max-width: 400px;
+}
+
+.augu-saraksts {
+  background-color:#F2E9D8;
+  padding:50px 70px;
+  border-radius:16px;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.augu-saraksts a {
+  display:block;
+  font-size:20px;
+  color:#3A2F25;
+  text-decoration:none;
+  padding:8px 12px;
+  border-radius:8px;
+  transition: all 0.3s ease;
+}
+
+.augu-saraksts a:hover {
+  background-color:#C7D8B7;
+  color:#4A3B2A;
+  transform:translateX(8px);
+}
+
+/* Responsīvais izkārtojums */
+@media (max-width:900px){
+  .veselibai-container{
+    flex-direction:column;
+    gap:40px;
+  }
+  .augu-attels,
+  .augu-saraksts{
+    width:90%;
+  }
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease;
+  backdrop-filter: blur(4px);
+
+  background-size: cover;
+  background-position: center;
+}
+
+.modal.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 1;
+}
+
+.modal-content {
+  background: rgba(199, 216, 183, 0.5); /* salvijas tonis */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 16px;
+  width: 80%;
+  max-width: 600px;
+  position: relative;
+  z-index: 2;
+  padding: 42px;
+  text-align: left;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transform: translateY(20px);
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  opacity: 0;
+}
+
+.modal.show .modal-content {
+  transform: translateY(0);
+  opacity: 1;
+  }
+
+.modal-content h3 {
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 22px;
+  letter-spacing: 0.6px;
+}
+
+.modal-content p {
+  font-size: 18px;
+  line-height: 1.9;
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  max-width: 60ch;
+  margin-bottom: 18px;
+  font-weight: 300;
+  color: #2F3E2E;
+}
+
+.modal-content p::first-letter {
+  font-size: 42px;
+  float: left;
+  line-height: 1;
+  padding-right: 6px;
+  font-weight: 500;
+  color: #4A5C45; /* tumšāks salvijas tonis */
+}
+
+.modal-content .close {
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #4A3B2A;
+}
+
+.modal-content .close:hover {
+  color: #C7D8B7;
+}
+
+/* Fona attēli modal logiem */
+
+#liepziedi {
+  background-image: url('../images/liepziedi.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#mezrozites {
+  background-image: url('../images/mezrozites.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#kumelites { background: url('../images/kumelites.webp');
+  background-image: url('../images/kumelites.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  }
+
+
+#pienenes {
+  background-image: url('../images/pienenes.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#salvija {
+  background-image: url('../images/salvija.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+#pavasaris {
+  background-image: url('../images/pavasaris.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#vasara {
+  background-image: url('../images/summer.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#rudens {
+  background-image: url('../images/autumn1.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#zala {
+  background-image: url('../images/zala2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#melna {
+  background-image: url('../images/melna1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#balta {
+  background-image: url('../images/balta1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#zalu {
+  background-image: url('../images/zaalu3.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#auglu {
+  background-image: url('../images/auglu1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }

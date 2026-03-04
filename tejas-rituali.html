@@ -15,51 +15,73 @@
     <span></span>
   </a>
 
-<script>
-const backButton = document.getElementById("backButton");
-
-backButton.addEventListener("click", function(event) {
-  event.preventDefault();
-
-  document.body.classList.add("fade-out");
-
-  setTimeout(() => {
-    window.location.href = this.href;
-  }, 1200); // tieši tāds pats kā CSS transition
-});
-</script>
-
   <h2 class="page-title">Tējas rituāli</h2>
   <div class="soft-line"></div>
 
-  <section class="tejas-rituali-container">
-  <div class="rituali-row">
-    <img src="images/teja1.webp" alt="Zaļā tēja">
-    <div class="rituali-text">
-      <h3>Tēja sākas klusumā</h3>
-      <p>Ar ūdeni, kas uzsilst.<br>
+<section class="veselibai-container">
+  <div class="kreisais-bloks">
+    <!-- Kreisā puse - kvadrāts ar attēlu -->
+   <div class="augu-attels">
+     <img src="images/teja1.webp" alt="Tēju pagatavošana"> 
+     </div>
+
+     <p class="attela-teksts">Ar ūdeni, kas uzsilst.<br>
       Ar brīdi, ko izvēlies veltīt sev.<br>
       Ar smalkajām pagatavošanas niansēm, kas no vienkāršas tasītes rada īpašu mirkli.
-      </p>
+    </p>
+</div>
+    <!-- Labā puse - augu saraksts -->
+    <div class="augu-saraksts">
+      <a href="#" data-modal="melna_teja">melnās tējas rituāls</a>
+      <a href="#" data-modal="zala_teja">zaļās tējas rituāls</a>
+      <a href="#" data-modal="kumelisu_teja">kumelīšu tējas rituāls</a>
+      <a href="#" data-modal="auksta_teja">auksto tēju rituāls</a>
+      <a href="#" data-modal="anglu_teja">angļu tējas rituāls</a>
+    </div>
+  </section>
+
+  <!-- Modal logi -->
+  <div id="melna_teja" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Melnās tējas rituāls</h3>
+      <p>Šķipsniņai melnās tējas uzlej karstu ūdeni. Pēc 3-5 minūtēm tēja gatava</p>
     </div>
   </div>
 
-  <div class="rituali-row">
-    <img src="images/teja2.avif" alt="Kūmelīšu tēja">
-    <div class="rituali-text">
-      <strong>Kumelīšu tēja</strong>
+  <div id="zala_teja" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Zaļās tējas rituāls</h3>
+      <p>Šķipsniņai zaļās tējas uzlej karstu ūdeni. Pēc 3-5 minūtēm tēja gatava</p>
+    </div>
+  </div>
+
+  <div id="kumelisu_teja" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Kumelīšu tējas rituāls</h3>
       <p>Ieliec kumelīšu ziedus karstā ūdenī. Ļauj ievilkties 5-7 minūtes.</p>
     </div>
   </div>
 
-  <div class="rituali-row">
-  <img src="images/teja4.webp" alt="Melnā tēja">
-    <div class="rituali-text">
-      <strong>Melnā tēja</strong>
-      <p>Šķipsniņai melnās tējas uzlej karstu ūdeni. Pēc 3-5 minūtēm tēja gatava.</p>
+  <div id="auksta_teja" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Auksto tēju rituāls</h3>
+      <p>Ledus kubiciņi, ledus, ledus, duss ...</p>
     </div>
   </div>
-</section>
+
+  <div id="anglu_teja" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Angļu tējas rituāls</h3>
+      <p>Apakštasīte un piens</p>
+    </div>
+  </div>
+
+<script src="js/main.js"></script>
 
 </body>
 </html>
