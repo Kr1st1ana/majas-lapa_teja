@@ -22,7 +22,7 @@ body.fade-out {
 }
 /* Header un logo */
 .header {
-  text-align: center;   /* centrē logo */
+  text-align: center;  
   padding: 20px 0;
   position: relative;
   z-index: 5;           /* lai ir virs hero fona */
@@ -32,10 +32,10 @@ body.fade-out {
   width: 80px;
 }
 
-/* Hero sekcija */
 /* Hero sadaļa ar fona attēlu */
 .hero {
   position: relative;
+  overflow: hidden;
   min-height: 80vh;
   background: url('../images/centralais atteels.jpg') center/cover no-repeat;
   padding: 40px 10%;
@@ -68,15 +68,18 @@ body.fade-out {
 .hero::before {
   content: "";
   position: absolute;
-  top:0; left:0;
-  width:100%; height:100%;
+  top:0; 
+  left:0;
+  width:100%; 
+  height:100%;
   background: rgba(250, 247, 241, 0.4);
   z-index: 1;
+  pointer-events: none;
 }
 
 .nav {
   position: relative;
-  z-index: 2;   /* lai būtu virs pārklājuma */
+  z-index: 10;   /* lai būtu virs pārklājuma */
   display: flex;
   justify-content: center;
   gap: 40px;
@@ -328,10 +331,10 @@ body.fade-in .hero-content {
 
 .tea-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 30px;
-  max-width: 700px;
-  width: min(1100px,90%);
+  max-width: 1100px;
+  width: 90%;
   margin: 0 auto;
   padding: 40px 0;
 }
@@ -363,14 +366,11 @@ body.fade-in .hero-content {
 }
 
 /* Mobilais skats */
-@media (max-width: 600px) {
-  .tea-grid {
-    grid-template-columns: 1fr; /* viens zem otra */
-  }
+@media (max-width: 400px) {
   .tea-card {
-    max-height: 180px; /* mazāki kvadrāti telefonā */
-  }
+   font-size: 14px;
 }
+ }
 
 .back-button {
   align-self: flex-start; 
@@ -530,13 +530,13 @@ h2.page-title {
 .kreisais-bloks {
   display: flex;
   flex-direction: column;
-  align-items: center; /* vai flex-start, ja gribi pa kreisi */
+  align-items: center;
   max-width: 400px;
 }
 
 .augu-attels {
   width: 100%;
-  max-width: 400px;     /* vari mainīt, ja gribi lielākas */
+  max-width: 400px;   
   aspect-ratio: 1 / 1;  /* skaista, dabīga proporcija */
   border-radius: 16px;
   overflow: hidden;
@@ -722,7 +722,6 @@ h2.page-title {
   background-repeat: no-repeat;
   }
 
-
 #pienenes {
   background-image: url('../images/pienenes.webp');
   background-size: cover;
@@ -754,6 +753,13 @@ h2.page-title {
 
 #rudens {
   background-image: url('../images/autumn1.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#ziema {
+  background-image: url('../images/ziema.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
