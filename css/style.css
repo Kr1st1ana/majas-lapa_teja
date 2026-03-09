@@ -701,6 +701,55 @@ h2.page-title {
 
 /* Fona attēli modal logiem */
 
+#melna_teja {
+  background-image: url('../images/melna1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#zala_teja {
+  background-image: url('../images/zala1.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#balta_teja {
+  background-image: url('../images/balta1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#auksta_teja {
+  background-image: url('../images/summer1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#auglu_teja {
+  background-image: url('../images/auglu.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#zalu_teja {
+  background-image: url('../images/zaalu2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#anglu_teja {
+  background-image: url('../images/english1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 #liepziedi {
   background-image: url('../images/liepziedi.png');
   background-size: cover;
@@ -765,21 +814,42 @@ h2.page-title {
   background-repeat: no-repeat;
 }
 
-#zala {
-  background-image: url('../images/zala2.jpg');
+#melna {
+  background-image: url('../images/tejas_koks1.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-#melna {
-  background-image: url('../images/melna1.jpg');
+#zala {
+  background-image: url('../images/tejas_koks1.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
 #balta {
+  background-image: url('../images/tejas_koks1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#dzeltena {
+  background-image: url('../images/tejas_koks1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#oolung {
+  background-image: url('../images/tejas_koks1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#pu-erh {
   background-image: url('../images/tejas_koks1.jpg');
   background-size: cover;
   background-position: center;
@@ -795,6 +865,13 @@ h2.page-title {
 
 #auglu {
   background-image: url('../images/auglu1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#ledus {
+  background-image: url('../images/ledus.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
