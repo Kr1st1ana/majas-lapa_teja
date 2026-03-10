@@ -50,3 +50,35 @@ window.addEventListener('click', e => {
     if (e.target === modal) modal.classList.remove('show');
   });
 });
+
+// Meklē tikai Jaunumu saites ar modal atribūtu
+const jaunumuLinks = document.querySelectorAll('.jaunumi a[data-modal]');
+const jaunumuModals = document.querySelectorAll('.jaunumi .modal');
+
+jaunumuLinks.forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const modalId = this.dataset.modal;
+    const modal = document.getElementById(modalId);
+    if(modal){
+      modal.style.display = 'block';
+    }
+  });
+});
+
+// Aizvēršana
+jaunumuModals.forEach(modal => {
+  const closeBtn = modal.querySelector('.close');
+  if (closeBtn) {
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+  }
+});
+
+// Klikšķis ārpus modal loga
+window.addEventListener('click', e => {
+  jaunumuModals.forEach(modal => {
+    if (e.target === modal) modal.style.display = 'none';
+  });
+});

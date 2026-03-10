@@ -41,8 +41,8 @@ body.fade-out {
   padding: 40px 10%;
 
   display: flex;
-  flex-direction: column;   /* ļoti svarīgi */
-  align-items: center;      /* centrē horizontāli */
+  flex-direction: column; 
+  align-items: center; 
 }
 
 /* Logo centrēts augšā */
@@ -72,7 +72,7 @@ body.fade-out {
   left:0;
   width:100%; 
   height:100%;
-  background: rgba(250, 247, 241, 0.4);
+  background:	rgba(250, 247, 241, 0.4);
   z-index: 1;
   pointer-events: none;
 }
@@ -325,9 +325,167 @@ body.fade-in .hero-content {
 .contact-email a:hover {
   border-bottom-color: rgba(0,0,0,0.6);
 }
-.hidden {
-  display: none;
+/* Jaunumi */
+.jaunumi {
+  padding: 30px 10%;
+  background-color: #FAF7F1;
 }
+
+.jaunumi-virsraksts {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 50px;
+  color: #3A2F25;
+}
+/* Izceltais raksts */
+
+.jaunums-izcelts {
+  display: flex;
+  grid-column: span 3;
+  gap: 40px;
+  margin-bottom: 60px;
+  align-items: center;
+  background: #FAF7F1;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.btn-izcelts {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 26px;
+  background-color: #6C8E55;
+  color: #FAF7F1;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 500;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-izcelts:hover {
+  background-color: #4A3B2A;
+  transform: translateY(-3px);
+}
+
+.jaunums-izcelts img {
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.jaunums-teksts {
+  flex: 1;
+}
+
+/* Dienas citāts */
+
+.dienas-citats {
+  margin: 60px auto;
+  max-width: 600px;
+  grid-column: span 3;
+  text-align: center;
+  font-style: italic;
+  font-size: 22px;
+  color: #4A3B2A;
+  padding: 30px;
+  background: rgba(250,247,241,0.6);
+  border-radius: 10px;
+}
+
+.jaunums-teksts h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.jaunums-teksts p {
+  margin-bottom: 20px;
+}
+
+.jaunums-teksts a {
+  color: #6C8E55;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+/* Mazie jaunumi */
+
+.jaunumi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.jaunums {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+
+.jaunums:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+.jaunums img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.jaunums h2 {
+  font-size: 20px;
+  margin: 15px;
+  color: #3A2F25;
+}
+
+.jaunums p {
+  margin: 0 15px 15px;
+  color: #555;
+}
+
+.jaunums a {
+  display: inline-block;
+  margin: 0 15px 20px;
+  color: #6C8E55;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Jaunumu modal logi */
+.jaunumi .modal {
+  display: none; /* sākumā paslēpti */
+  position: fixed;
+  z-index: 50; /* virs pārējā */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5); /* puscaurspīdīgs fons */
+}
+
+/* Modal saturam speciāla kaste */
+.jaunumi .modal-content {
+  background-color: #FAF7F1;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 500px;
+  position: relative;
+}
+
+/* Aizvēršanas poga */
+.jaunumi .modal .close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
 
 .tea-grid {
   display: grid;
